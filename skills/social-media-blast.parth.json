@@ -1,0 +1,30 @@
+{
+  "parth_package": "skill",
+  "format_version": 1,
+  "id": "social-media-blast",
+  "kind": "skill",
+  "name": "Social Media Blast",
+  "description": "One utterance → message friends on WhatsApp, notify Instagram followers, post the new video to Instagram (post + story), Facebook and Telegram. Pacing caps + approval gates on all outbound posts.",
+  "version": "1.0.0",
+  "tags": ["social", "multi-post", "creator"],
+  "steps": [
+    { "title": "WhatsApp: open", "connector": "whatsapp", "action": "open", "params": {}, "phase": 0 },
+    { "title": "WhatsApp: send group message", "connector": "whatsapp", "action": "send_group_message",
+      "params": { "recipients": ["Harshit", "Saurabh", "Pankaj"], "text": "Aaj Los Angeles ghoomne chalna hai!" },
+      "phase": 2, "approval_required": true },
+    { "title": "Instagram: open", "connector": "instagram", "action": "open", "params": {}, "phase": 0 },
+    { "title": "Instagram: message followers", "connector": "instagram", "action": "message_followers",
+      "params": { "text": "Aaj aap sab ke liye kuch achha hone wala hai — lage raho!" },
+      "phase": 2, "approval_required": true },
+    { "title": "Instagram: upload post", "connector": "instagram", "action": "upload_post",
+      "params": { "media": "generated_video.mp4" }, "phase": 2, "approval_required": true },
+    { "title": "Instagram: upload story", "connector": "instagram", "action": "upload_story",
+      "params": { "media": "generated_video.mp4" }, "phase": 2, "approval_required": true },
+    { "title": "Facebook: upload post", "connector": "facebook", "action": "upload_post",
+      "params": { "media": "generated_video.mp4" }, "phase": 2, "approval_required": true },
+    { "title": "Telegram: message contacts", "connector": "telegram", "action": "message_contacts",
+      "params": {}, "phase": 2, "approval_required": true }
+  ],
+  "role": "",
+  "tools": []
+}

@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.parth-export/
+.gradle/
+build/
+local.properties
+*.keystore
+.DS_Store

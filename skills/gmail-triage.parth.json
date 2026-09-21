@@ -1,0 +1,19 @@
+{
+  "parth_package": "skill",
+  "format_version": 1,
+  "id": "gmail-triage",
+  "kind": "skill",
+  "name": "Gmail Triage",
+  "description": "Read all emails, keep the important ones, propose deleting the rest — the delete list is ALWAYS shown to the owner first and only executed after approval (owner's own rule).",
+  "version": "1.0.0",
+  "tags": ["email", "office", "productivity"],
+  "steps": [
+    { "title": "Gmail: open", "connector": "gmail", "action": "open", "params": {}, "phase": 0 },
+    { "title": "Gmail: read emails", "connector": "gmail", "action": "read_emails",
+      "params": { "classify": "important vs unimportant" }, "phase": 1 },
+    { "title": "Gmail: delete unimportant", "connector": "gmail", "action": "delete_unimportant",
+      "params": { "preview_to_owner": true }, "phase": 2, "approval_required": true }
+  ],
+  "role": "",
+  "tools": []
+}
