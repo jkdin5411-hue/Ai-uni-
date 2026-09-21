@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Parth</string>
+    <string name="a11y_description">Parth phone-use engine: operates apps on this device on your instruction (taps, swipes, typing, reading the screen). Runs only for tasks you ask for.</string>
+</resources>

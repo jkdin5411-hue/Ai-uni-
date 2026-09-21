@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=66"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "parth-core"
+version = "0.1.0"
+description = "Parth — voice-first autonomous agentic assistant core (wake='Parth', stop='Viram')"
+readme = "../README.md"
+requires-python = ">=3.10"
+dependencies = []  # stdlib only — runs anywhere
+
+[project.optional-dependencies]
+dev = []
+
+[tool.setuptools.packages.find]
+include = ["parth*"]
